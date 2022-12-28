@@ -1,0 +1,61 @@
+<select class="form-control select-lang"
+  #selectedLang
+  (change)="switchLang(selectedLang.value)">
+  <option
+    *ngFor="let language of translate.getLangs()" 
+    [value]="language"
+    [selected]="language === lang">
+    {{ language }}
+  </option>
+</select>
+
+<div class="d-flex vh-100 align-items-center justify-content-center">
+  <div class="col-md-3">
+    <div class="w-100 text-center">
+      <img class="mb-4" src="assets/logo-tekus.svg" alt="Logo Tekus">
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="mb-5">
+
+      <div class="mb-3">
+        <label class="form-label">{{'LOGIN.User' | translate }}</label>
+        <input type="text" class="form-control" formControlName="UserName" required [ngClass]="{ 'is-invalid':
+            loginFormControls['UserName'].invalid &&
+            loginFormControls['UserName'].touched &&
+            loginFormControls['UserName'].errors}">
+        <div class="invalid-feedback" *ngIf="
+            loginFormControls['UserName'].invalid &&
+            loginFormControls['UserName'].touched &&
+            loginFormControls['UserName'].errors">
+            {{'Required' | translate }}
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">{{'LOGIN.Password' | translate }}</label>
+        <input type="password" class="form-control" formControlName="Password" required [ngClass]="{ 'is-invalid':
+            loginFormControls['Password'].invalid &&
+            loginFormControls['Password'].touched &&
+            loginFormControls['Password'].errors}">
+        <div class="invalid-feedback" *ngIf="
+            loginFormControls['Password'].invalid &&
+            loginFormControls['Password'].touched &&
+            loginFormControls['Password'].errors">
+            {{'Required' | translate }}
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-danger w-100 mt-3" [disabled]="loginForm.invalid">{{'LOGIN.Enter' | translate }}</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal - Error credentials -->
+<ng-template #modalError let-modal>
+  <div class="card text-center p-4">
+    <div class="card-body">
+      <h5 class="card-title mb-3">{{'LOGIN.Modal.Title' | translate }}</h5>
+      <p class="card-text mb-3">{{'LOGIN.Modal.Text' | translate }}</p>
+      <button class="btn btn-danger" (click)="modal.close()">{{'LOGIN.Modal.Button' | translate }}</button>
+    </div>
+  </div>
+</ng-template>

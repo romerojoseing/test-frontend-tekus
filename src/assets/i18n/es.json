@@ -1,0 +1,71 @@
+{
+  "Required": "Requerido",
+
+  "LOGIN": {
+    "User": "Usuario",
+    "Password": "Contraseña",
+    "Enter": "Entrar",
+
+    "Modal": {
+      "Title": "Error en Credenciales",
+      "Text": "El usuario o la contraseña son incorrectas.",
+      "Button": "Cerrar"
+    }
+  },
+
+  "NABVAR": {
+    "Exit": "Salir"
+  },
+
+  "FOOTER": {
+    "Develop": "Diseñado con ❤ por",
+    "Test": "Prueba técnica frontend"
+  },
+
+  "LIST": {
+    "Title": "Listado de Suscriptores",
+    "Add-Sub": "Agregar Suscriptor",
+
+    "Table": {
+      "Id": "Id",
+      "Email": "Email",
+      "Name": "Nombre",
+      "Country": "Pais",
+      "Job": "Trabajo",
+      "Phone": "Teléfono",
+      "Status": "Estatus",
+      "Actions": "Acciones"
+    },
+
+    "Modal": {
+      "Title-Detele": "Elimnar Suscriptor",
+      "Text-Detele-1": "El Suscriptor",
+      "Text-Detele-2": "sera eliminado. ¿Estas seguro?",
+      "Cancel": "Cancelar",
+      "Delete": "Eliminar",
+      "Title-Detele-Success": "Suscriptor Eliminado"
+    }
+  },
+
+  "CREATE-EDIT": {
+    "Title-Create": "Crear Suscriptor",
+    "Title-Edit": "Editar Suscriptor",
+    "Back": "Volver",
+
+    "Form": {
+      "Name": "Nombre",
+      "Email": "Email",
+      "Country": "Código de Pais",
+      "Phone": "Teléfono",
+      "Job": "Trabajo",
+      "Area": "Area",
+      "Select": "Selecciona una opción",
+      "Save": "Guardar"
+    },
+
+    "Modal": {
+      "Title-Create": "Suscriptor Creado",
+      "Title-Edit": "Suscriptor Actualizado"
+    }
+  }
+}

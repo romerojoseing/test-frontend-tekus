@@ -1,0 +1,110 @@
+<div class="m-5 py-5">
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-4 text-center" *ngIf="!this.activatedRoute.snapshot.params['id']">{{'CREATE-EDIT.Title-Create' | translate }}</h2>
+    <h2 class="mb-4 text-center" *ngIf="this.activatedRoute.snapshot.params['id']">{{'CREATE-EDIT.Title-Edit' | translate }}</h2>
+    <div><button routerLink="/base/list" type="button" class="btn btn-secondary text-white">{{'CREATE-EDIT.Back' | translate }}</button></div>
+  </div>
+
+  <form [formGroup]="subscriberForm" (ngSubmit)="sendData()" class="mb-5">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">{{'CREATE-EDIT.Form.Name' | translate }}</label>
+          <input type="text" class="form-control" formControlName="Name" required [ngClass]="{ 'is-invalid':
+                subscriberFormControls['Name'].invalid &&
+                subscriberFormControls['Name'].touched &&
+                subscriberFormControls['Name'].errors}">
+          <div class="invalid-feedback" *ngIf="
+                subscriberFormControls['Name'].invalid &&
+                subscriberFormControls['Name'].touched &&
+                subscriberFormControls['Name'].errors">
+                {{'Required' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">{{'CREATE-EDIT.Form.Email' | translate }}</label>
+          <input type="email" class="form-control" formControlName="Email" required [ngClass]="{ 'is-invalid':
+                subscriberFormControls['Email'].invalid &&
+                subscriberFormControls['Email'].touched &&
+                subscriberFormControls['Email'].errors}">
+          <div class="invalid-feedback" *ngIf="
+                subscriberFormControls['Email'].invalid &&
+                subscriberFormControls['Email'].touched &&
+                subscriberFormControls['Email'].errors">
+                {{'Required' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">{{'CREATE-EDIT.Form.Country' | translate }}</label>
+          <select *ngIf="countries" class="form-control selected-light type-user" formControlName="CountryCode"
+            [ngClass]="{ 'is-invalid':
+                subscriberFormControls['CountryCode'].invalid &&
+                subscriberFormControls['CountryCode'].touched &&
+                subscriberFormControls['CountryCode'].errors}">
+            <option selected disabled value="">{{'CREATE-EDIT.Form.Select' | translate }}</option>
+            <option *ngFor="let code of countries.Data" value="{{code.Code}}">{{code.Name}}</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="
+                subscriberFormControls['CountryCode'].invalid &&
+                subscriberFormControls['CountryCode'].touched &&
+                subscriberFormControls['CountryCode'].errors">
+                {{'Required' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">{{'CREATE-EDIT.Form.Phone' | translate }}</label>
+          <input type="text" class="form-control" formControlName="PhoneNumber" required [ngClass]="{ 'is-invalid':
+                subscriberFormControls['PhoneNumber'].invalid &&
+                subscriberFormControls['PhoneNumber'].touched &&
+                subscriberFormControls['PhoneNumber'].errors}">
+          <div class="invalid-feedback" *ngIf="
+                subscriberFormControls['PhoneNumber'].invalid &&
+                subscriberFormControls['PhoneNumber'].touched &&
+                subscriberFormControls['PhoneNumber'].errors">
+                {{'Required' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">{{'CREATE-EDIT.Form.Job' | translate }}</label>
+          <input type="text" class="form-control" formControlName="JobTitle">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">{{'CREATE-EDIT.Form.Area' | translate }}</label>
+          <input type="text" class="form-control" formControlName="Area">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-danger mt-3" [disabled]="subscriberForm.invalid">{{'CREATE-EDIT.Form.Save' | translate }}</button>
+  </form>
+</div>
+
+<!-- Modal - Subscriber Create or Update Success -->
+<ng-template #modalSuccess let-modal>
+  <div class="card text-center p-4 modal-tekus">
+    <p class="icon-close" (click)="modal.close()"><i class="bi bi-x"></i></p>
+    <div class="card-body">
+      <h5 class="card-title m-0" *ngIf="!this.activatedRoute.snapshot.params['id']">{{'CREATE-EDIT.Modal.Title-Create' | translate }}</h5>
+      <h5 class="card-title m-0" *ngIf="this.activatedRoute.snapshot.params['id']">{{'CREATE-EDIT.Modal.Title-Edit' | translate }}</h5>
+      <p class="m-0"><i class="bi bi-check-circle text-success m-0 icon-center"></i></p>
+    </div>
+  </div>
+</ng-template>

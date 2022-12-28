@@ -1,0 +1,71 @@
+{
+  "Required": "Required",
+
+  "LOGIN": {
+    "User": "User",
+    "Password": "Password",
+    "Enter": "Enter",
+
+    "Modal": {
+      "Title": "Credentials Error",
+      "Text": "The username or password is incorrect.",
+      "Button": "Close"
+    }
+  },
+
+  "NABVAR": {
+    "Exit": "Logout"
+  },
+
+  "FOOTER": {
+    "Develop": "Designed with ❤ by",
+    "Test": "Frontend technical test"
+  },
+
+  "LIST": {
+    "Title": "Subscriber List",
+    "Add-Sub": "Add Subscriber",
+
+    "Table": {
+      "Id": "Id",
+      "Email": "Email",
+      "Name": "Name",
+      "Country": "Country",
+      "Job": "Job",
+      "Phone": "Phone",
+      "Status": "Status",
+      "Actions": "Actions"
+    },
+
+    "Modal": {
+      "Title-Detele": "Delete Subscriber",
+      "Text-Detele-1": "The Subscriber",
+      "Text-Detele-2": "will be deleted. Are you sure?",
+      "Cancel": "Cancel",
+      "Delete": "Delete",
+      "Title-Detele-Success": "Subscriber Removed"
+    }
+  },
+
+  "CREATE-EDIT": {
+    "Title-Create": "Create Subscriber",
+    "Title-Edit": "Edit Subscriber",
+    "Back": "Back",
+
+    "Form": {
+      "Name": "Name",
+      "Email": "Email",
+      "Country": "Country Code",
+      "Phone": "Phone",
+      "Job": "Job",
+      "Area": "Area",
+      "Select": "Select an option",
+      "Save": "Save"
+    },
+
+    "Modal": {
+      "Title-Create": "Subscriber Created",
+      "Title-Edit": "Subscriber Updated"
+    }
+  }
+}
